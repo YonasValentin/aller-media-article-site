@@ -81,6 +81,6 @@ if (articlesData?.value?.record?.articles) {
 }
 
 if (adsData?.value?.record.ads) {
-  ads.value = adsData.value.record.ads;
+  ads.value = adsData.value.record?.ads;
 }
 </script>
