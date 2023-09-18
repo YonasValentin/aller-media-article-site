@@ -35,12 +35,14 @@ const props = defineProps<{
   }>;
 }>();
 
+const { ads } = toRefs(props);
+
 const currentAdIndex = ref(0);
 
-const currentAd = computed(() => props.ads[currentAdIndex.value]);
+const currentAd = computed(() => ads.value[currentAdIndex.value]);
 
 const interval = setInterval(() => {
-  currentAdIndex.value = (currentAdIndex.value + 1) % props.ads.length;
+  currentAdIndex.value = (currentAdIndex.value + 1) % ads.value.length;
 }, 3 * 1000);
 
 onUnmounted(() => {
