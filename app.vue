@@ -2,8 +2,10 @@
   <div class="mx-auto max-w-7xl py-5 min-h-screen bg-cream">
     <category-banner category-name="skæbner" />
 
-    <main class="grid grid-cols-12 p-5">
-      <section class="col-span-8 grid grid-cols-2 gap-5">
+    <main class="grid p-5 lg:grid-cols-12">
+      <section
+        class="row-start-2 grid grid-cols-2 gap-5 lg:row-start-1 lg:col-span-8"
+      >
         <div v-if="articlesError" class="col-span-2 text-red-600">
           Der opstod en fejl under hentning af artikler. Prøv igen senere.
         </div>
@@ -24,7 +26,7 @@
         </template>
       </section>
 
-      <aside class="col-start-10 col-span-3">
+      <aside class="row-start-1 lg:col-start-10 lg:col-span-3 max-lg:mb-5">
         <ad-card v-if="ads.length" :ads="ads" />
       </aside>
     </main>
