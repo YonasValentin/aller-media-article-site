@@ -33,34 +33,7 @@
   </div>
 </template>
 <script setup lang="ts">
-interface Article {
-  id: number;
-  imageUrl: string;
-  title: string;
-  category: string;
-  link: string;
-  video: boolean;
-}
-
-interface ArticlesResponse {
-  record: {
-    articles: Article[];
-  };
-}
-
-interface Ad {
-  id: number;
-  imageUrl: string;
-  link: string;
-  text: string;
-  cta: string;
-}
-
-interface AdResponse {
-  record: {
-    ads: Ad[];
-  };
-}
+import type { ArticlesResponse, AdResponse, Article, Ad } from "@/types";
 
 const featuredArticle = computed(() => articles.value[0]);
 const otherArticles = computed(() => articles.value.slice(1));
